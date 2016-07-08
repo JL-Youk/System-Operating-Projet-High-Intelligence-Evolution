@@ -1,0 +1,153 @@
+
+body{
+    background-color: #2c3e50;
+}
+#dialogue{
+    font-size: 60px;
+    text-shadow: 2px 2px #292929;
+    font-family: vcr_osd_monoregular, sans-serif;
+    display: block;
+    text-align: center;
+    color: #2ecc71;
+    margin-top: 10%;
+}
+/* curseurqui ecrit le texte */
+.typed-cursor{
+    display: none;
+}
+#parole{
+	text-align: center;
+}
+.phraserobot{
+    margin-left: 20%;
+    color: firebrick;
+    font-size: 20px;
+    font-family: cursive;
+    animation: fadeinphraserobot 2s;
+    -moz-animation: fadeinphraserobot 2s; /* Firefox */
+    -webkit-animation: fadeinphraserobot 2s; /* Safari et Chrome */
+    -o-animation: fadeinphraserobot 2s; /* Opera */
+}
+.phrasehumain{
+    margin-right: 20%;
+    color: darkcyan;
+    font-size: 20px;
+    font-family: cursive;
+    animation: fadeinphrasehumain 1s;
+    -moz-animation: fadeinphrasehumain 1s; /* Firefox */
+    -webkit-animation: fadeinphrasehumain 1s; /* Safari et Chrome */
+    -o-animation: fadeinphrasehumain 1s; /* Opera */
+}
+.ApresRepRobot{
+    border-bottom: 1px solid rgba(222, 222, 222, 0.73);
+    padding-bottom: 20px;
+    display: block;
+    animation: fadeinphraserobot 3s;
+    -moz-animation: fadeinphraserobot 3s; /* Firefox */
+    -webkit-animation: fadeinphraserobot 3s; /* Safari et Chrome */
+    -o-animation: fadeinphraserobot 3s; /* Opera */
+}
+@keyframes fadeinphraserobot {
+    from {
+        opacity:0;
+        transform: translateX(35px);
+    }
+    50%{
+    	opacity:0;
+        transform: translateX(35px);
+    }
+    to {
+        opacity:1;
+        transform: translateX(0px);
+    }
+}
+@-moz-keyframes fadeinphraserobot { /* sur Firefox */
+    from {
+        opacity:0;
+        -moz-transform: translateX(35px);
+    }
+    50%{
+    	opacity:0;
+        transform: translateX(35px);
+    }
+    to {
+        opacity:1;
+        -moz-transform: translateX(0px);
+    }
+}
+@-webkit-keyframes fadeinphraserobot { /* sur Safari et Chrome */
+    from {
+        opacity:0;
+        -webkit-transform: translateX(35px);
+    }
+    50%{
+    	opacity:0;
+        transform: translateX(35px);
+    }
+    to {
+        opacity:1;
+        -webkit-transform: translateX(0px);
+    }
+}
+@-o-keyframes fadeinphraserobot { /* sur Opera */
+    from {
+        opacity:0;
+        -o-transform: translateX(35px);
+    }
+    50%{
+    	opacity:0;
+        transform: translateX(35px);
+    }
+    to {
+        opacity: 1;
+        -o-transform: translateX(0px);
+    }
+}
+@keyframes fadeinphrasehumain {
+    from {
+        opacity:0;
+        transform: translateX(-35px);
+    }
+    to {
+        opacity:1;
+        transform: translateX(0px);
+    }
+}
+@-moz-keyframes fadeinphrasehumain { /* sur Firefox */
+    from {
+        opacity:0;
+        -moz-transform: translateX(-35px);
+    }
+    to {
+        opacity:1;
+        -moz-transform: translateX(0px);
+    }
+}
+@-webkit-keyframes fadeinphrasehumain { /* sur Safari et Chrome */
+    from {
+        opacity:0;
+        -webkit-transform: translateX(-35px);
+    }
+    to {
+        opacity:1;
+        -webkit-transform: translateX(0px);
+    }
+}
+@-o-keyframes fadeinphrasehumain { /* sur Opera */
+    from {
+        opacity:0;
+        -o-transform: translateX(-35px);
+    }
+    to {
+        opacity: 1;
+        -o-transform: translateX(0px);
+    }
+}
+@font-face {
+    font-family: 'vcr_osd_monoregular';
+    src: url('../font/vcr_osd_mono_1.001-webfont.woff2') format('woff2'),
+         url('../font/vcr_osd_mono_1.001-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

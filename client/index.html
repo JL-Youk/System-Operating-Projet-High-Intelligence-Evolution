@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title></title>
+	  <meta charset="utf-8">
+	  <script src="js/jquery-1.12.4.min.js"></script>
+	  <script src="js/bootstrap.min.js"></script>
+	  <script src="js/typed.js"></script>
+	  <script src="scripts/recherche.js"></script>
+	  <script src="scripts/speech.js"></script>
+	  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	  <link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+	   <div id="Introduction">
+		   <div class="container">
+			    <div class="row">
+					<span id="dialogue" class="col-md-12" >
+					</span>
+					<div id="parole" class="col-md-6 col-md-offset-3">
+					</div>
+				</div>
+				<div class="row" style="margin-top: 50px;text-align: center;">
+					<form id="form">
+					    <input name="chaine" type="text" id="chaine" value="Bonjour" />
+					    <input type="submit" value="Envoyer" id="handle" />
+					</form>
+					<div id="retour">
+					    <i>vide</i>
+					</div>
+				</div>
+		   </div>
+	   </div>
+
+	</body>
+	<script type="text/javascript">
+		jQuery(document).ready(function($){
+		    $('#form').submit(function(e){
+		        // On désactive le comportement par défaut du navigateur
+		        // (qui consiste à appeler la page action du formulaire)
+		        e.preventDefault();
+		         
+		        // On envoi la requête AJAX
+		        $.getJSON(
+		            '../json.php',
+		            {chaine: $('#chaine').val()},
+		            function(data){
+		                $('#retour').hide();
+		                $('#retour').html('')
+		                    .append('<b>Reponses</b> : '+data.chaine+'<br/>')
+		                    .append('<b>Date</b> : '+data.date+'<br/>')
+		                    .append('<b>Version PHP</b> : '+data.phpversion+'<br/>')
+		                    .append('<b>Vitesse de la reponses</b> : '+data.tempsexectution+'<br/>');
+		                $('#retour').fadeIn();
+		                reponseRobot(data.chaine);
+		            }
+		        );
+		    });
+		});
+	</script>
+</html>
